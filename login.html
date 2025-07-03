@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - LiteBloom</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    .login-box {
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+    input {
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      border: none;
+      width: 200px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>LiteBloom Login</h1>
+    <input type="password" id="password" placeholder="Enter password..." />
+    <br />
+    <button onclick="login()">Login</button>
+    <div class="error" id="error"></div>
+  </div>
+
+  <script>
+    function login() {
+      const input = document.getElementById("password").value;
+      const correct = "litebloom123";
+      if (input === correct) {
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("error").innerText = "Wrong password!";
+      }
+    }
+  </script>
+</body>
+</html>
